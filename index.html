@@ -2,38 +2,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <title>Quiz App</title>
 </head>
 <body>
-    <div class="container">
-        <div id="question-container" class="hide">
-            <div id="question">Question</div>
-            <div id="answer-buttons" class="btn-grid">
-                <button class="btn" id="a" onclick="checkAnswer("a")">answera</button>
-                <button class="btn" id="b" onclick="checkAnswer("b")">answerb</button>
-                <button class="btn" id="c" onclick="checkAnswer("c")">answerc</button>
-                <button class="btn" id="d" onclick="checkAnswer("d")">answerd</button>
-            </div>
-
-        <div id="timer">
-            <div id="counter"></div>
-        </div>
-        </div>
-
-        <div class="controls">
-            <button id="start-btn" class="start-btn btn">Start</button>
-            <button id="next-btn" class="next-btn btn hide">Next</button>
-            <button id="finish-btn" class="finish-btn btn hide">Finish</button>
-        </div>
-        <div id="progress">
-            <div class="prog"></div>
-        </div>
-        <div id="scoreContainer" style="display: none" img src="#">
-            <p>50%</p>
-        </div>
+    <div class="quiz-home-box custom-box">
+        <h4>You'll have 15 seconds to answer each question.</h4>
+        <button type="button" class="start-quiz-btn btn">Start The Quiz</button>
     </div>
+
+    <div class="quiz-box custom-box">
+        <div class="stats">
+            <div class="quiz-time">
+                <div class = "remaining-time">15</div>
+            </div>
+            <div class="score-board">
+                <span class="score-text">Score:</span>
+                <span class="correct-answers">0</span>
+            </div>
+        </div>
+        <div class="question-box">
+            <div class="current-question-num" id="current-question-num">
+                1
+            </div>
+            <div class="question-text" id="question-text"></div>
+        </div>
     
-<script src = 'script.js'></script>
+    <div class="option-box" id="option-box">
+      
+    </div>
+    <div class="answer-description">
+        They dont
+    </div>
+    <div class="next-question">
+        <button type="button" class="next-question-btn btn">Next</button>
+        <button type="button" class="see-result-btn btn">See Result</button>
+    </div>
+    </div>
+
+    <div class="quiz-over-box custom-box">
+        <h1>Quiz Result</h1>
+        <h4>Total Questions: <span class="total-questions">3</span></h4>
+        <h4>Attempt: <span class="total-attempt">2</span></h4>
+        <h4>Correct: <span class="total-correct">2</span></h4>
+        <h4>Wrong: <span class="total-wrong">0</span></h4>
+        <h4>percentage: <span class="percentage">66%</span></h4>
+        <button type="button" class="start-again-quiz-btn btn">Try Again</button>
+        <button type="button" class="go-home-btn btn">Home</button>
+
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
