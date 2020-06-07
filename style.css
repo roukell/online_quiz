@@ -251,5 +251,23 @@ body {
 
 .start-again-quiz-btn, .go-home-btn {
     margin-top: 15px;
+}
 
+@media (max-width: 767px){
+    .quiz-home-box h4 {
+        font-size: 20px;
+    }
+    .quiz-home-box h1 {
+        font-size: 30px;
+        margin: 0;
+    }
+    .quiz-box .question-box .question-text {
+        font-size: 20px;
+    }
+    .custom-box{
+        padding: 30px 20px 50px 20px;
+    }
+    .quiz-box .stats{
+        font-size: 20px;
+    }
 }
