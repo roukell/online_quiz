@@ -5,7 +5,7 @@
 body {
     margin: 0px;
     padding: 0px;
-    background-color:black;
+    background-color:rgb(219, 200, 175);
 }
 
 .custom-box {
@@ -17,7 +17,7 @@ body {
 }
 .quiz-home-box {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Pangolin', cursive;
     display: none;
 }
 
@@ -28,6 +28,7 @@ body {
 .quiz-home-box h4 {
     font-size: 30px;
     color: black;
+    
 }
 
 .btn {
@@ -38,7 +39,7 @@ body {
     font-size: 20px;
     border-radius: 30px;
     cursor: pointer;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Pangolin', cursive;
     white-space: nowrap;
     margin: 0 10px;
 }
@@ -49,7 +50,7 @@ body {
 }
 
 .quiz-box {
-    background-color: pink;
+    background-color: white;
     display: none;
 }
 
@@ -93,17 +94,20 @@ body {
     line-height: 56px;
     text-align: center;
     border-radius: 50%;
+    font-family: 'Pangolin', cursive;
 }
 
 .quiz-box .stats .quiz-time .remaining-time.less-time {
     color:red;
     border: 4px solid red;
+    font-family: 'Pangolin', cursive;
 }
 
 .quiz-box .stats .score-board {
     flex-basis: calc(50% - 20px);
     max-width: calc(50% - 20px);
     text-align: right;
+    font-family: 'Pangolin', cursive;
 }
 
 .quiz-box .stats .score-board .correct-answers {
@@ -111,7 +115,7 @@ body {
 }
 
 .quiz-box .question-box{
-    background-color: white;
+    background-color: rgb(240, 213, 245);
     padding: 40px 30px;
     margin-top: 40px;
     border-radius: 10px;
@@ -123,8 +127,8 @@ body {
 .quiz-box .question-box .current-question-num {
     height: 70px;
     width: 70px;
-    background-color: white;
-    border: 2px solid black;
+    background-color: rgb(250, 227, 222);
+    border: 2px solid lightslategray;
     font-size: 20px;
     border-color: black;
     border-radius: 50%;
@@ -136,12 +140,13 @@ body {
     left: 50%;
     margin-left: -35px;
     z-index: 1;
+    font-family: 'Pangolin', cursive;
 }
 
 .quiz-box .question-box .question-text {
     font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: blueviolet;
+    font-family: 'Pangolin', cursive;
+    color: black;
 }
 
 .quiz-box .option-box {
@@ -151,19 +156,19 @@ body {
 }
 
 .quiz-box .option-box .option{
-    background-color: white;
+    background-color: pink;
     flex-basis: calc(50% - 20px);
     max-width: calc(50% - 20px);
     margin-top: 30px;
     padding: 14px 15px;
     text-align: center;
     font-size: 20px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-weight: 500;
     color:black;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Pangolin', cursive;
     border-radius: 30px;
-    border: 2px solid lightgoldenrodyellow;
+    border: 2px solid white;
     cursor: pointer;
 }
 
@@ -190,23 +195,23 @@ body {
 
 .quiz-box .answer-description.show {
     display: block;
-    animation: fadeInRight 1s ease;
 }
 
 .see-result-btn.show,
 .next-question-btn.show {
     display: inline-block;
-    animation: fadeInRight 1s ease;
 }
 
 .quiz-box .answer-description {
-    background-color: white;
-    border: 2px solid lightgoldenrodyellow;
+    background-color: rgb(159, 216, 162);
+    border: 2px solid white;
     margin-top:  20px;
     padding: 15px;
     border-radius: 10px;
-    color: #555555;
+    color: black;
     display: none;
+    font-family: 'Pangolin', cursive;
+    font-size: larger;
 }
 
 .quiz-box .next-question {
@@ -222,13 +227,13 @@ body {
 
 .quiz-over-box h1 {
     font-size: 50px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Pangolin', cursive;
     color: black;
     margin: 0 0 20px;
 }
 
 .quiz-over-box h4 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Pangolin', cursive;
     font-size: 25px;
     font-weight: normal;
     color: black;
