@@ -13,6 +13,8 @@ const quizOverBox = document.querySelector(".quiz-over-box");
 const startAgainQuizBtn = document.querySelector(".start-again-quiz-btn");
 const goHomeBtn = document.querySelector(".go-home-btn");
 const startQuizBtn = document.querySelector(".start-quiz-btn");
+const nameText = document.getElementById("myForm");
+const finalMsg = document.querySelector(".finalMsg");
 
 let attempt = 0;
 let questionIndex = 0;
@@ -26,7 +28,8 @@ const myApp = [{
     options: ["Document Object Model", "Domain Object Model", "Document Observation Model", "Domestic Object Model"],
     answer: 0,
     description: "Document Object Model (DOM) is the browser's internal representation of your web page.",
-}, {
+}
+, {
     question: "Web pages are written in?",
     options: ["FTP", "HTML", "HTTP", "URL"],
     answer: 1,
@@ -249,6 +252,21 @@ function quizResult() {
     const percentage = (score/(myApp.length))*100;
     document.querySelector(".percentage").innerHTML = Math.floor(percentage) + "%";
 }
+
+nameText.addEventListener("submit", (e)=> {
+    e.preventDefault();
+    let name = nameText.elements[0];
+    let userName = name.value.trim();
+    localStorage.setItem("userName", JSON.stringify(userName));
+    console.log(userName);
+    const percentage = (score/(myApp.length))*100;
+    localStorage.setItem("percentage", JSON.stringify(percentage));
+    console.log(JSON.stringify(percentage + "%"));
+    localStorage.getItem("userName", "percentage");
+    if (nameText !== undefined) {
+        alert("Thank you" + " " + userName +"! " + "Your score is" + " " + percentage + "%. " + "And it has been stored locally.");
+    }
+})
 
 function resetQuiz() {
 attempt = 0;

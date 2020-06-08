@@ -44,6 +44,11 @@ body {
     margin: 0 10px;
 }
 
+.submit-name-btn {
+    padding:10px 15px;
+    font-size: 15px;
+}
+
 .btn:focus {
     outline: none;
     color: white;
@@ -257,6 +262,15 @@ body {
 .start-again-quiz-btn, .go-home-btn {
     margin-top: 15px;
 }
+
+/* .finalMsg {
+    display: none;
+}
+
+.finalMsg.show {
+    display: block;
+    font-size: 20px;
+} */
 
 @media (max-width: 767px){
     .quiz-home-box h4 {
