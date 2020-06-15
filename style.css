@@ -263,14 +263,24 @@ body {
     margin-top: 15px;
 }
 
-/* .finalMsg {
-    display: none;
+.records h4 ul {
+    font-family: 'Pangolin', cursive;
+    font-size: 25px;
+    font-weight: normal;
+    color: black;
+    margin: 15px 0 25px;
+    list-style-type: none;
+    justify-content: center;
+    text-align: center;
 }
 
-.finalMsg.show {
-    display: block;
-    font-size: 20px;
-} */
+label {
+    font-family: 'Pangolin', cursive;
+}
+
+.records {
+    margin-top: 50px;
+}
 
 @media (max-width: 767px){
     .quiz-home-box h4 {

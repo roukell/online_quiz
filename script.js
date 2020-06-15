@@ -258,15 +258,27 @@ nameText.addEventListener("submit", (e)=> {
     let name = nameText.elements[0];
     let userName = name.value.trim();
     localStorage.setItem("userName", JSON.stringify(userName));
-    console.log(userName);
-    const percentage = (score/(myApp.length))*100;
+    // console.log(userName);
+    const percentage = (score/(myApp.length))*100 + "%";
     localStorage.setItem("percentage", JSON.stringify(percentage));
-    console.log(JSON.stringify(percentage + "%"));
-    localStorage.getItem("userName", "percentage");
-    if (nameText !== undefined) {
-        alert("Thank you" + " " + userName +"! " + "Your score is" + " " + percentage + "%. " + "And it has been stored locally.");
-    }
-})
+    // console.log(JSON.stringify(percentage + "%"));
+}
+)
+
+
+function createRecord(name) {
+    let li = document.createElement("li");
+    li.textContent = name;
+    return li;
+}
+
+let userName = JSON.parse(localStorage.getItem("userName"));
+let userScore = JSON.parse(localStorage.getItem("percentage"));
+
+const record = document.querySelector("#record");
+record.appendChild(createRecord(userName));
+record.appendChild(createRecord(userScore));
+
 
 function resetQuiz() {
 attempt = 0;
