@@ -260,7 +260,7 @@ let namesAndScores = JSON.parse(localStorage.getItem("namesAndScores"));
         ]
     };
 
-console.log(namesAndScores);
+// console.log(namesAndScores);
 
 nameText.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -286,8 +286,8 @@ function createRecord() {
     for (let i = 0; i < namesAndScores.length; i++) {
             let name = namesAndScores[i].name;
             let score = namesAndScores[i].score;
-            console.log(name);
-            console.log(score);
+            // console.log(name);
+            // console.log(score);
 
             let li = document.createElement("li");
             li.textContent = name + "'s score is " + score;
