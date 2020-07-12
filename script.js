@@ -260,8 +260,8 @@ let namesAndScores = JSON.parse(localStorage.getItem("namesAndScores"));
         ]
     };
 
-// console.log(namesAndScores);
 
+// when click or submit, store data into local storage and append user name and score
 nameText.addEventListener("submit", (e) => {
     e.preventDefault();
     let name = nameText.elements[0];
@@ -280,7 +280,7 @@ nameText.addEventListener("submit", (e) => {
     
 })
 
-
+// get data from localStorage and append list
 function createRecord() {
     const record = document.querySelector("#record");
     for (let i = 0; i < namesAndScores.length; i++) {
