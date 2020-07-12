@@ -28,8 +28,7 @@ const myApp = [{
     options: ["Document Object Model", "Domain Object Model", "Document Observation Model", "Domestic Object Model"],
     answer: 0,
     description: "Document Object Model (DOM) is the browser's internal representation of your web page.",
-}
-, {
+}, {
     question: "Web pages are written in?",
     options: ["FTP", "HTML", "HTTP", "URL"],
     answer: 1,
@@ -74,8 +73,7 @@ const myApp = [{
     options: ["head", "body", "HTML", "document"],
     answer: 3,
     description: "Document is always at the tope of the DOM tree.",
-}
-]
+}]
 
 
 function load() {
@@ -119,7 +117,7 @@ function generateRandomQuestion() {
             questionIndex = randomNumber;
         }
     }
-    
+
     myArray.push(randomNumber);
     // console.log(myArray);
     load();
@@ -138,8 +136,8 @@ function check(ele) {
         // console.log("wrong");
         ele.classList.add("wrong");
         // show correct answer when clicked answer is wrong;
-        for (let i = 0; i < optionBox.children.length; i++){
-            if(optionBox.children[i].id == myApp[questionIndex].answer) {
+        for (let i = 0; i < optionBox.children.length; i++) {
+            if (optionBox.children[i].id == myApp[questionIndex].answer) {
                 optionBox.children[i].classList.add("show-correct");
             }
         }
@@ -157,16 +155,16 @@ function check(ele) {
 }
 
 function timeIsUp() {
-   showTimeUpText();
-    for (let i = 0; i < optionBox.children.length; i++){
-        if(optionBox.children[i].id == myApp[questionIndex].answer) {
+    showTimeUpText();
+    for (let i = 0; i < optionBox.children.length; i++) {
+        if (optionBox.children[i].id == myApp[questionIndex].answer) {
             optionBox.children[i].classList.add("show-correct");
         }
     }
     disableOptions();
     showAnswerDescription();
     showNextQuestionBtn();
-    
+
 }
 
 function startTimer() {
@@ -174,7 +172,7 @@ function startTimer() {
     remainingTime.classList.remove("less-time");
     interval = setInterval(() => {
         timeLimit--;
-        if (timeLimit <10) {
+        if (timeLimit < 10) {
             timeLimit = "0" + timeLimit;
         }
         if (timeLimit < 6) {
@@ -186,7 +184,7 @@ function startTimer() {
             clearInterval(interval);
             timeIsUp();
         }
-    },1000)
+    }, 1000)
 }
 
 function stopTimer() {
@@ -220,11 +218,11 @@ function hideNextQuestionBtn() {
     nextQuestionBtn.classList.remove("show");
 }
 
-function showTimeUpText () {
+function showTimeUpText() {
     timeUpText.classList.add("show");
 }
 
-function hideTimeUpText () {
+function hideTimeUpText() {
     timeUpText.classList.remove("show");
 }
 
@@ -248,49 +246,64 @@ function quizResult() {
     document.querySelector(".total-questions").innerHTML = myApp.length;
     document.querySelector(".total-attempt").innerHTML = attempt;
     document.querySelector(".total-correct").innerHTML = score;
-    document.querySelector(".total-wrong").innerHTML = attempt-score;
-    const percentage = (score/(myApp.length))*100;
+    document.querySelector(".total-wrong").innerHTML = attempt - score;
+    const percentage = (score / (myApp.length)) * 100;
     document.querySelector(".percentage").innerHTML = Math.floor(percentage) + "%";
 }
 
-nameText.addEventListener("submit", (e)=> {
+let namesAndScores = JSON.parse(localStorage.getItem("namesAndScores"));
+
+    if (namesAndScores === null) {
+        namesAndScores = [
+                {"name": "Melody",
+                "score": "100%"}
+        ]
+    };
+
+console.log(namesAndScores);
+
+nameText.addEventListener("submit", (e) => {
     e.preventDefault();
     let name = nameText.elements[0];
     let userName = name.value.trim();
-    const percentage = (score/(myApp.length))*100 + "%";
-    
-    let namesAndScores = [{myName: userName, myScore: percentage}];
+    const percentage = (score / (myApp.length)) * 100 + "%";
+    let entry = {
+        "name": userName,
+        "score": percentage
+    };
+    namesAndScores.push(entry);
     localStorage.setItem("namesAndScores", JSON.stringify(namesAndScores));
-    console.log(namesAndScores);
-    // localStorage.setItem("userName", JSON.stringify(userName));
-    // console.log(userName);
-    // localStorage.setItem("percentage", JSON.stringify(percentage));
-    // console.log(JSON.stringify(percentage + "%"));
-}
-)
 
-
-function createRecord(name) {
     let li = document.createElement("li");
-    li.textContent = name;
-    return li;
+    li.textContent = userName + "'s score is " + percentage;
+    record.appendChild(li);
+    
+})
+
+
+function createRecord() {
+    const record = document.querySelector("#record");
+    for (let i = 0; i < namesAndScores.length; i++) {
+            let name = namesAndScores[i].name;
+            let score = namesAndScores[i].score;
+            console.log(name);
+            console.log(score);
+
+            let li = document.createElement("li");
+            li.textContent = name + "'s score is " + score;
+            record.appendChild(li);
+    }
 }
 
-let namesAndScoresUser = JSON.parse(localStorage.getItem("namesAndScores"));
-// let userName = JSON.parse(localStorage.getItem("userName"));
-// let userScore = JSON.parse(localStorage.getItem("percentage"));
-
-const record = document.querySelector("#record");
-record.appendChild(createRecord(namesAndScoresUser));
-
+createRecord();
 
 
 function resetQuiz() {
-attempt = 0;
-// questionIndex = 0;
-score = 0;
-number = 0;
-myArray = [];
+    attempt = 0;
+    // questionIndex = 0;
+    score = 0;
+    number = 0;
+    myArray = [];
 }
 
 function quizOver() {
@@ -298,7 +311,7 @@ function quizOver() {
     seeResultBtn.classList.add("show");
 }
 
-seeResultBtn.addEventListener("click", ()=> {
+seeResultBtn.addEventListener("click", () => {
     // quizBox.style.display = "none";
     quizBox.classList.remove("show");
     seeResultBtn.classList.remove("show");
@@ -306,20 +319,20 @@ seeResultBtn.addEventListener("click", ()=> {
     quizResult();
 })
 
-startAgainQuizBtn.addEventListener("click", ()=>{
+startAgainQuizBtn.addEventListener("click", () => {
     quizBox.classList.add("show");
     quizOverBox.classList.remove("show");
     resetQuiz();
     nextQuestion();
 })
 
-goHomeBtn.addEventListener("click", ()=>{
+goHomeBtn.addEventListener("click", () => {
     quizOverBox.classList.remove("show");
     quizHomeBox.classList.add("show");
     resetQuiz();
 })
 
-startQuizBtn.addEventListener("click", ()=>{
+startQuizBtn.addEventListener("click", () => {
     quizBox.classList.add("show");
     quizHomeBox.classList.remove("show");
     startTimer();
