@@ -22,12 +22,15 @@ HTML, CSS, JavaScript
 5. Welcome to redo the quiz after finishing.
 6. To view your record in local storage, please reload/refresh the page, and you will see if at the end of the quiz.
 
+## License
+* MIT
+
 ## Contributing
  This app is contirbuted by Melody Lo.
 
 ## Questions
-If you have any questions, feel free to contact me via email: yiling.melody.lo@gmail.com  
-My GitHub profile: https://github.com/roukell  
-My portfolio: https://melodylo.com  
+* If you have any questions, feel free to contact me via email: yiling.melody.lo@gmail.com  
+* My GitHub profile: https://github.com/roukell  
+* My portfolio: https://melodylo.com   
 
 
