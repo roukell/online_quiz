@@ -1,11 +1,12 @@
 # Online Quiz
-![License](https://img.shields.io/github/license/roukell/online_quiz)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Preview
   ![img](./img/preview.png)
 
 ## Description
-Welcome to my first online quiz built by using mainly JavaScript. 
+Welcome to my first online quiz built by using mainly JavaScript.  
+Online Quiz tests your basic HTML, CSS, JavaScript knowledge.
 
 ## Deployed Application
 https://roukell.github.io/online_quiz/
