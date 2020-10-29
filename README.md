@@ -1,7 +1,6 @@
 # Online Quiz
 ![License](https://img.shields.io/github/license/roukell/online_quiz)
 
-
 ## Preview
   ![img](./img/preview.png)
 
@@ -21,6 +20,9 @@ HTML, CSS, JavaScript
 4. Your result will be generated after all 10 questions are completed.
 5. Welcome to redo the quiz after finishing.
 6. To view your record in local storage, please reload/refresh the page, and you will see if at the end of the quiz.
+
+## Contributing
+ This app is contirbuted by Melody Lo.
 
 ## Questions
 If you have any questions, feel free to contact me via email: yiling.melody.lo@gmail.com  
